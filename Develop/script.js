@@ -1,15 +1,19 @@
-// Assignment code here
+//Initialize an empty array 
+let finalOutput = [];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+var passwordText = document.querySelector("#password");
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+function writePassword(finalString) {
+  passwordText.value = finalString; 
 }
+
+// function clearValue() {
+//   passwordText.value = '';
+//   generatePassword();
+// }
 
 function generatePassword() {
   var passwordLength = parseInt(
@@ -64,42 +68,38 @@ function randomPassword(
 
   console.log(confirmLowerCase);
   if (confirmLowerCase) {
-    chars += "abcdefghijklmnopqrstuvwxy";
+    chars += "abcdefghijklmnopqrstuvwxyz";
   }
 
   console.log(confirmUpperCase);
   if (confirmUpperCase) {
-    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
   console.log(confirmNumeric);
   if (confirmNumeric) {
-    var chars = "0123456789";
+    chars += "0123456789";
   }
 
   console.log(confirmSpecial);
   if (confirmSpecial) {
-    var chars = "!@#$%^&*_-+=9";
+    chars += "!@#$%^&*_-+=";
   }
 
-  //var length = parseInt(
-  //prompt('How many characters would you like your password to contain?')
-  //var hasSpecialCharacters = confirm(
-  // 'Click OK to confirm including special characters.'
-  // );
-  //concat string together
-  //loop
-  //math.random
-  //selecing the random string from the possibleCharacter
-  //1. you should have an array for all of the options available for the password.
-  //The arrays are strings that contains either the capital letter options, the lowercase options etc.
-  //like this var upperCaseLetters = [“A”, “B”, “C”]
-  //Then what you want to do is have confirm boxes to ask the user “if they want to include uppercase letters in the password?
+  console.log('line 85', chars);
+  console.log('line 86', chars.split('')); 
 
-  for (var i = 0; i < string_length; i++) {
-    var rnum = Math.floor(Math.random() * chars.length);
-    randomstring += chars.substring(rnum, rnum + 1);
+  var arr = chars.split('');
+  console.log('line 89', arr.length);
+
+  for (var i = 0; i < passwordLength; i++) {
+
+    var rnum = Math.floor(Math.random() * arr.length);
+    finalOutput.push(arr[rnum]);
   }
+  var finalString = finalOutput.join('')
+  console.log('line 113', finalString);
+  writePassword(finalString);
 }
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);

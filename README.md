@@ -2,7 +2,7 @@
 
 ## The Motivation
 
-My motivation for this project is to delve into making a site more interactive and getting more comfortable with Javascript. There was a lot of ways I could've approaced this and it has grown my skills in the language
+My motivation for this project is to delve into making a site more interactive and getting more comfortable with Javascript. There was a lot of ways I could've approached this and it has grown my skills in the language.
 
 ## Challenges
 

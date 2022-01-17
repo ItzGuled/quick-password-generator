@@ -10,11 +10,6 @@ function writePassword(finalString) {
   passwordText.value = finalString;
 }
 
-// function clearValue() {
-//   passwordText.value = '';
-//   generatePassword();
-// }
-
 function generatePassword() {
   var passwordLength = parseInt(
     prompt(
@@ -84,7 +79,7 @@ function randomPassword(
     finalOutput.push(arr[rnum]);
   }
   var finalString = finalOutput.join("");
-
+  finalOutput = [];
   writePassword(finalString);
 }
 // Add event listener to generate button
